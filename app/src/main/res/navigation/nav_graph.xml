@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/searchFragment">
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.itsnotme.starwars.presentation.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_detailInfoFragment"
+            app:destination="@id/detailInfoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailInfoFragment"
+        android:name="com.itsnotme.starwars.presentation.detailinfo.DetailInfoFragment"
+        android:label="fragment_detail_info"
+        tools:layout="@layout/fragment_detail_info" />
+
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.itsnotme.starwars.presentation.favorites.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" />
+</navigation>

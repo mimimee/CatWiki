@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">StarWars</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="search_menu_title">Search</string>
+    <string name="details_menu_title">Details</string>
+    <string name="favorites_menu_title">Favorites</string>
+
 </resources>
