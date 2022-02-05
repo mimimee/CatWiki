@@ -1,6 +1,7 @@
 package com.itsnotme.starwars
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
-class StarWarsApp : Application() {
-}
+@HiltAndroidApp
+class StarWarsApp : Application()
