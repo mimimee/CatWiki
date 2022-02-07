@@ -2,9 +2,16 @@ package com.itsnotme.starwars.data.person.cloud
 
 import com.google.gson.annotations.SerializedName
 
-data class PersonCloudModel(
-    @SerializedName("name") private val name: String,
-    @SerializedName("birth_year") private val birthYear: String,
-    @SerializedName("url") private val url: String,
-    @SerializedName("films") private val films: List<String>
+class PersonListCloudResponse(
+    @SerializedName("count") val count: Int = 0,
+    @SerializedName("next") var next: String = "",
+    @SerializedName("previous") val previous: String = "",
+    @SerializedName("results") val results: List<PersonCloudModel> = emptyList()
+)
+
+class PersonCloudModel(
+    @SerializedName("name") val name: String = "",
+    @SerializedName("birth_year") val birthYear: String = "",
+    @SerializedName("url") val url: String = "",
+    @SerializedName("films") val films: List<String> = emptyList()
 )
