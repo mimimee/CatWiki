@@ -20,7 +20,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
         }
 
         binding.root.setOnClickListener {
-            viewModel.fetchPersons()
+            viewModel.fetchPersons("ha")
         }
     }
 }

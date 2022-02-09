@@ -5,6 +5,6 @@ import androidx.lifecycle.LiveData
 interface PersonCacheDataSource {
     suspend fun clearFavorites()
     suspend fun saveFavorite(person: FavoritePersonEntity)
-    suspend fun getFavorites(): LiveData<List<FavoritePersonEntity>>
-    suspend fun getFavoritePersonByUrl(url: String): LiveData<FavoritePersonEntity>
+    fun getFavorites(): LiveData<List<FavoritePersonEntity>>
+    fun getFavoritePersonByUrl(url: String): LiveData<FavoritePersonEntity>
 }

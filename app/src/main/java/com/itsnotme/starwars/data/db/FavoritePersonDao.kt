@@ -16,8 +16,8 @@ interface FavoritePersonDao {
     suspend fun insertFavorite(item: FavoritePersonEntity)
 
     @Query("SELECT * FROM FAVORITE_TABLE")
-    suspend fun observeAllFavorites(): LiveData<List<FavoritePersonEntity>>
+    fun observeAllFavorites(): LiveData<List<FavoritePersonEntity>>
 
     @Query("SELECT * FROM FAVORITE_TABLE WHERE url = :url")
-    suspend fun observeFavoritePersonByUrl(url: String): LiveData<FavoritePersonEntity>
+    fun observeFavoritePersonByUrl(url: String): LiveData<FavoritePersonEntity>
 }

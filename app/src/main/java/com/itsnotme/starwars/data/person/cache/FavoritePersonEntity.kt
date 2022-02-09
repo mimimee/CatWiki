@@ -11,5 +11,5 @@ data class FavoritePersonEntity(
     val url: String,
     val name: String,
     val birthYear: String,
-    private val films: List<String>
+    val films: List<String>
 )

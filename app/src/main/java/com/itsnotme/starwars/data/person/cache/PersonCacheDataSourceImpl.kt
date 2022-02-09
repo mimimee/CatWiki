@@ -15,9 +15,9 @@ class PersonCacheDataSourceImpl @Inject constructor(
         favoritePersonDao.insertFavorite(person)
     }
 
-    override suspend fun getFavorites(): LiveData<List<FavoritePersonEntity>> =
+    override fun getFavorites(): LiveData<List<FavoritePersonEntity>> =
         favoritePersonDao.observeAllFavorites()
 
-    override suspend fun getFavoritePersonByUrl(url: String): LiveData<FavoritePersonEntity> =
+    override fun getFavoritePersonByUrl(url: String): LiveData<FavoritePersonEntity> =
         favoritePersonDao.observeFavoritePersonByUrl(url)
 }
