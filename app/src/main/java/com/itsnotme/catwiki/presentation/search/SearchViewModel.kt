@@ -22,12 +22,13 @@ class SearchViewModel @Inject constructor(
     private val _factList = MutableLiveData<List<FactCloudModel>>()
     val factList = _factList.asLiveData()
 
-    fun fetchFacts(searchText: String) {
+    fun fetchFacts() {
         searchJob?.cancel()
         searchJob = viewModelScope.launch {
             delay(searchDelay)
             try {
-
+                val resp = repository.getFactListFromNet(10)
+                _factList.value = resp
             } catch (e: Exception) {
                 handleSearchException(e)
             }

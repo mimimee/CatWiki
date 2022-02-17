@@ -21,7 +21,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
 
 
         binding.root.setOnClickListener {
-            viewModel.fetchFacts("ha")
+            viewModel.fetchFacts()
         }
     }
 }

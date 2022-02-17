@@ -1,8 +1,8 @@
 package com.itsnotme.catwiki.data.fact.repository
 
 import androidx.lifecycle.LiveData
-import com.itsnotme.catwiki.data.fact.cache.FavoriteFactEntity
 import com.itsnotme.catwiki.data.fact.cache.FactCacheDataSource
+import com.itsnotme.catwiki.data.fact.cache.FavoriteFactEntity
 import com.itsnotme.catwiki.data.fact.cloud.FactCloudDataSource
 import com.itsnotme.catwiki.data.fact.cloud.FactCloudModel
 import com.itsnotme.catwiki.domain.repository.FactRepository
@@ -12,8 +12,8 @@ class FactRepositoryImpl @Inject constructor(
     private val cloudDataSource: FactCloudDataSource,
     private val cacheDataSource: FactCacheDataSource
 ) : FactRepository {
-    override suspend fun getFactListFromNet(name: String): List<FactCloudModel> =
-        cloudDataSource.getFactList(name)
+    override suspend fun getFactListFromNet(amount: Int): List<FactCloudModel> =
+        cloudDataSource.getFactList(amount)
 
     override suspend fun getFactDetailsFromNet(url: String): FactCloudModel =
         cloudDataSource.getFactDetails(url)

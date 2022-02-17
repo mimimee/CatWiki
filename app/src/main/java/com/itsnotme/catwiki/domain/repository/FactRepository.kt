@@ -5,7 +5,7 @@ import com.itsnotme.catwiki.data.fact.cache.FavoriteFactEntity
 import com.itsnotme.catwiki.data.fact.cloud.FactCloudModel
 
 interface FactRepository {
-    suspend fun getFactListFromNet(name: String): List<FactCloudModel>
+    suspend fun getFactListFromNet(amount: Int): List<FactCloudModel>
     suspend fun getFactDetailsFromNet(url: String): FactCloudModel
 
     suspend fun clearFavorites()

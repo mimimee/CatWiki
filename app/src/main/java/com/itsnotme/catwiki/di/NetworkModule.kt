@@ -1,6 +1,6 @@
 package com.itsnotme.catwiki.di
 
-import androidx.viewbinding.BuildConfig
+import com.itsnotme.catwiki.BuildConfig
 import com.itsnotme.catwiki.data.net.CatWikiApiService
 import dagger.Module
 import dagger.Provides
