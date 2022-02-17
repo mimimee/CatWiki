@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">StarWars</string>
+    <string name="app_name">CatWiki</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="search_menu_title">Search</string>

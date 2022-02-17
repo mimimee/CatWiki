@@ -10,7 +10,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.itsnotme.starwars"
+        applicationId "com.itsnotme.catwiki"
         minSdk 26
         targetSdk 31
         versionCode 1
@@ -47,7 +47,7 @@ dependencies {
     def gson_converter_version = "2.9.0"
     def viewModel_ktx_version = "2.4.0"
     def room_version = "2.4.1"
-
+    def livedata_ktx_version = "2.4.0"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
@@ -84,4 +84,7 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
+
+    //livedata
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$livedata_ktx_version"
 }
