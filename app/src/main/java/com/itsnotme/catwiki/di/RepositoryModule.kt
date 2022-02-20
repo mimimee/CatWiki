@@ -16,15 +16,15 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 abstract class RepositoryModule {
 
-    @Singleton
     @Binds
+    @Singleton
     abstract fun provideRepository(repository: FactRepositoryImpl): FactRepository
 
-    @Singleton
     @Binds
+    @Singleton
     abstract fun provideCloudDataSource(cloudDataSource: FactCloudDataSourceImpl): FactCloudDataSource
 
-    @Singleton
     @Binds
+    @Singleton
     abstract fun provideCacheDataSource(cacheDataSource: FactCacheDataSourceImpl): FactCacheDataSource
 }

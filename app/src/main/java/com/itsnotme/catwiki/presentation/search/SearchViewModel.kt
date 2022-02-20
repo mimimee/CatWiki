@@ -3,30 +3,27 @@ package com.itsnotme.catwiki.presentation.search
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.itsnotme.catwiki.data.fact.cloud.FactCloudModel
-import com.itsnotme.catwiki.domain.repository.FactRepository
+import com.itsnotme.catwiki.domain.fact.FactDomainModel
+import com.itsnotme.catwiki.domain.fact.GetRandomFactsInteractor
 import com.itsnotme.catwiki.other.asLiveData
+import com.itsnotme.catwiki.presentation.base.Result
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SearchViewModel @Inject constructor(private val repository: FactRepository) : ViewModel() {
+class SearchViewModel @Inject constructor(
+    private val getRandomFactsInteractor: GetRandomFactsInteractor
+) : ViewModel() {
 
-    private val _factList = MutableLiveData<List<FactCloudModel>>()
+    private val _factList = MutableLiveData<Result<List<FactDomainModel>>>()
     val factList = _factList.asLiveData()
 
     fun fetchFacts() {
         viewModelScope.launch {
-            try {
-//                _factList.value = resp
-            } catch (e: Exception) {
-                handleSearchException(e)
-            }
+            _factList.value = Result.InProgress
+            val factsDomain = getRandomFactsInteractor.execute()
+            _factList.value = factsDomain
         }
-    }
-
-    private fun handleSearchException(e: Exception) {
-
     }
 }
