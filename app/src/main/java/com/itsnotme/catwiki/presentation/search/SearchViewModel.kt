@@ -16,12 +16,11 @@ class SearchViewModel @Inject constructor(
     private val getRandomFactsInteractor: GetRandomFactsInteractor
 ) : ViewModel() {
 
-    private val _factList = MutableLiveData<Result<List<FactDomainModel>>>()
+    private val _factList = MutableLiveData<Result<List<FactDomainModel>>>(Result.InProgress)
     val factList = _factList.asLiveData()
 
     fun fetchFacts() {
         viewModelScope.launch {
-            _factList.value = Result.InProgress
             val factsDomain = getRandomFactsInteractor.execute()
             _factList.value = factsDomain
         }
