@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "ru.zdravcity.app",
+    "sha256_cert_fingerprints":
+    ["BB:2B:BF:4C:BC:D8:C3:3F:6C:39:4A:BD:B3:89:0A:CE:1E:81:4D:1E:7E:93:D8:01:DA:4B:31:00:1A:1D:5E:81"]
+  }
+}]
